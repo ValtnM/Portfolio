@@ -28,8 +28,8 @@ export default {
         cursor: pointer;
         margin: 20px;
         img {
-            width: 300px;
-            height: 175px;
+            width: 100%;
+            height: 100%;
             border-radius: 20px;
             object-fit: cover;
 
@@ -56,6 +56,12 @@ export default {
                 width: 50px;
                 margin: 10px auto 30px auto;
             }
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .project {
+            width: 80%;
         }
     }
 </style>

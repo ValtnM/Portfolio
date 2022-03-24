@@ -1,7 +1,11 @@
 <template>
   <div class="content">
+    <div id="profile" v-if="this.staticMenu == true"></div>
     <div class="profile">
-      <h2>Qui suis-je ?</h2>
+      <div class="profile-title">
+        <font-awesome-icon class="address-card-icon" icon="address-card" />
+        <h2>Qui suis-je ?</h2>
+      </div>
       <hr>
       <div class="profile__content">
         <div class="parcours">
@@ -9,7 +13,7 @@
           <hr>
           <p>
             Après 4 années en tant que projectionniste de cinéma, j'ai décidé de me reconvertir dans l'informatique et plus particulièrement le développement web.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores veniam voluptates sed, laudantium voluptate nisi officiis aut veritatis provident totam, vero obcaecati a. Officia quo perferendis ut reiciendis hic.
+            Au terme d'une formation de 8 mois avec Openclassrooms, j'ai obtenu mon diplôme.
           </p>
         </div>
         <div class="formation">
@@ -35,7 +39,7 @@
 
 <script>
 export default {
-
+  props: ['staticMenu']
 }
 </script>
 
@@ -43,10 +47,23 @@ export default {
   .content {
     display: flex;
     width: 100%;
-    height: 600px;
+    height: auto;
     margin: 0;
     background: #E8F9F5;
     color: black;
+
+    .profile-title {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+
+      .address-card-icon {
+        display: inline;
+        height: 35px;
+        margin-bottom: 0.5rem;
+        margin-right: 15px;
+      }
+    }
 
     .profile-img {
       width: 35%;
@@ -72,8 +89,7 @@ export default {
   h2 {
     font-size: 2.5em;
     text-align: left;
-    text-transform: uppercase;
-    margin-top: 30px;
+    // text-transform: uppercase;
   }
 
   hr {
@@ -107,6 +123,7 @@ export default {
       box-shadow: 0 2px 5px black;
       padding: 15px;
       background: #f9f9f9;
+      margin-bottom: 30px;
 
       &:hover {
         background: #F3F3FF;
@@ -125,6 +142,7 @@ export default {
       box-shadow: 0 2px 5px black;
       padding: 15px;
       background: #f9f9f9;
+      margin-bottom: 30px;
 
       &:hover {
         background: #F3F3FF;
@@ -148,6 +166,85 @@ export default {
         }
       }
 
+    }
+  }
+
+  @media screen and (max-width: 1380px) {
+    .openclassrooms {
+      flex-direction: column;
+      margin-top: 20px!important;
+    }
+
+    img {
+      // order: 2;
+      margin-bottom: 10px!important;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    .profile__content {
+      flex-direction: column;
+      margin: auto;
+
+      .parcours {
+        width: 90%;
+        height: 220px;
+        margin: 0 auto 30px auto;
+      }
+
+      .formation {
+        width: 90%;
+        height: 220px;
+        margin: 0 auto 30px auto;
+
+        .openclassrooms {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .content {
+      flex-direction: column;
+      height: auto;
+
+      .profile-img {
+        width: 100%;
+        height: 600px;
+        margin-top: 10px;
+
+        .profile-filter {
+          height: 100%;
+          // background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(232,249,245,1) 100%);
+          background: linear-gradient(180deg, rgba(232,249,245,1) 0%, rgba(255,255,255,0) 50%, rgba(255,238,218,1) 100%);
+        }
+      }
+    }
+
+    .profile {
+      width: 100%;
+      padding: 0 10px;
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 570px) {
+    .parcours, .formation {
+      height: auto!important;
+    }
+
+    h2 {
+      font-size: 1.8em;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .formation, .parcours {
+      font-size: 0.8em;
+      .openclassrooms {
+        flex-direction: column!important;
+      }
     }
   }
 </style>

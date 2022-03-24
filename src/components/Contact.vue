@@ -1,11 +1,15 @@
 <template>
   <div class="contact">
+    <div id="contact" v-if="this.staticMenu == true"></div>
     <div class="contact-image">
           <img src="../assets/contact.jpg" alt="Contact">
           <div class="contact-filter"></div>
     </div>
     <div class="description">
-        <h2>Me contacter</h2>
+        <div class="contact-title">
+          <font-awesome-icon class="envelope-icon" icon="envelope" />
+          <h2>Me contacter</h2>
+        </div>
         <hr>
         <div class="contact-list">
           <div class="email">
@@ -26,7 +30,7 @@
 
 <script>
 export default {
-  
+  props: ['staticMenu']
 }
 </script>
 
@@ -39,6 +43,19 @@ export default {
     .description {
       width: 65%;
       padding-left: 20px;
+
+      .contact-title {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+
+        .envelope-icon {
+          display: inline;
+          height: 35px;
+          margin-bottom: 0.5rem;
+          margin-right: 15px;
+        }
+      }
 
       hr {
         margin: 0;
@@ -68,18 +85,16 @@ export default {
     font-size: 2.5em;
     text-align: left;
     color: black;
-    text-transform: uppercase;
-    margin-top: 30px;
   }
 
   .contact-list {
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+    margin: 50px 0 30px 0;
 
     .email, .linkedin {
       width: 300px;
-      height: 250px;
+      height: auto;
       border: 1px black solid;
       border-radius: 20px;
       box-shadow: 0 2px 5px black;
@@ -101,8 +116,51 @@ export default {
 
     img {
       width: 150px;
+      margin-bottom: 20px;
     }
   }
 
+  @media screen and (max-width: 992px) {
+    .contact {
+      flex-direction: column;
+      height: auto;
+
+      &-image {
+        order: 2;
+        width: 100%;
+        height: 600px;
+
+        .contact-filter {
+          background: linear-gradient(180deg, rgba(255,232,232,1) 0%, rgba(255,255,255,0) 100%);
+        }
+      }
+
+      .description {
+        order: 1;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+      }
+    }
+
+  }
+
+  @media screen and (max-width:660px) {
+    .contact-list {
+      flex-direction: column;
+
+      .email, .linkedin {
+        width: 90%;
+        margin: 30px auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 570px) {
+    h2 {
+      font-size: 1.8em;
+
+    }
+  }
 
 </style>

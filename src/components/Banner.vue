@@ -65,11 +65,14 @@ export default {
         }
     }
 
-    .arrow {
+    a {
         position: absolute;
         left: 50%;
         bottom: 30px;
         transform: translateX(-50%);
+    }
+
+    .arrow {
         width: 50px;
         height: 50px;
         color: white;
@@ -85,6 +88,74 @@ export default {
         }
         100% {
             transform: translateY(0);
+        }
+    }
+
+    @media screen and (max-width: 870px) {
+        .introduction {
+            width: 90%;
+
+            img {
+                width: 40%;
+                margin: auto;
+            }
+
+            &__text {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 690px) {
+        .introduction {
+            display: flex;
+            flex-direction: column;
+            // align-items: flex-start;
+            margin: auto;
+
+            img {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            &__text {
+                width: 80%;
+
+            }
+        }
+
+        a {
+            bottom: 20px;
+        }
+
+        .arrow {
+            height: 30px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .introduction {
+            padding: 50px 20px;
+            img {
+                width: 90%;
+            }
+
+            &__text {
+                width: 90%;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    @media screen and (max-height: 580px) {
+        
+
+        .arrow {
+            display: none;
         }
     }
 </style>

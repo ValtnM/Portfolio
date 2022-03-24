@@ -4,7 +4,7 @@
       <a href="#">
         <h1 class="navbar-brand" href="#">Mon portfolio</h1>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -42,7 +42,7 @@ export default {
   }
 
   nav {
-    width: 100%;
+    width: 100vw;
     height: 80px;
     position: fixed;
     top: 0;
@@ -63,7 +63,21 @@ export default {
 
   @media screen and (max-width: 992px) {
     nav {
+      // padding: 0 50px;
       height: auto;
+      min-height: 80px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    nav {
+      padding: 0 20px;
+    }
+  }
+
+  @media screen and (max-height: 580px) {
+    nav {
+      position: static;
     }
   }
 </style>

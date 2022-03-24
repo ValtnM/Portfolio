@@ -1,11 +1,15 @@
 <template>
   <div class="skills">
+        <div id="skills" v-if="this.staticMenu == true"></div>
         <div class="skills-image">
             <img src="../assets/skills.jpg" alt="Ampoule">
             <div class="skills-filter"></div>
         </div>
         <div class="description">
-            <h2>Mes compétences</h2>
+            <div class="skills-title">
+                <font-awesome-icon class="wrench-icon" icon="wrench" />                
+                <h2>Mes compétences</h2>
+            </div>
             <hr>
             <div class="allskills">
                 <div class="hardskills">
@@ -141,7 +145,7 @@
 
 <script>
 export default {
-
+    props: ['staticMenu']
 }
 </script>
 
@@ -154,10 +158,9 @@ export default {
 
         h2 {
             font-size: 2.5em;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             color: black;
             text-align: left;
-            margin-top: 30px;
         }
         &-image {
             width: 35%;
@@ -169,9 +172,9 @@ export default {
         }
         &-filter {
             width: 35%;
+            height: 600px;
             background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,238,218,1) 100%);
             position: absolute;
-            top: 0;
             left: 0;
             bottom: 0;
             right: 0;
@@ -179,6 +182,20 @@ export default {
         .description {
             width: 65%;
             background: #FFEEDA;
+
+            .skills-title {
+                display: flex;
+                align-items: center;
+                margin-top: 30px;
+
+                .wrench-icon {
+                    display: inline;
+                    height: 35px;
+                    margin-bottom: 0.5rem;
+                    margin-right: 15px;
+                }
+            }
+
             hr {
                 color: black;
                 margin-top: 0;
@@ -188,6 +205,7 @@ export default {
 
         .allskills {
             display: flex;
+            padding-bottom: 20px;
         }
 
         .hardskills, .softskills {
@@ -255,4 +273,46 @@ export default {
         }
     }
 
+    @media screen and (max-width: 992px) {
+        .skills {
+            flex-direction: column;
+            height: auto;
+
+            .skills-image {
+                order: 2;
+                width: 100%;
+                height: 600px;
+
+                .skills-filter {
+                    height: 600px;
+                    width: 100%;
+                    background: linear-gradient(180deg, rgba(255,238,218,1) 0%, rgba(255,255,255,0) 50%, rgba(234,249,253,1) 100%);
+                }
+            }
+
+            .description {
+                order: 1;
+                width: 100%;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 660px) {
+        .allskills {
+            flex-direction: column;
+            padding-bottom: 0;
+
+            .hardskills, .softskills {
+                width: 90%;
+                margin: 0 auto 30px auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: 570px) {
+        h2 {
+            font-size: 1.8em!important;
+        }
+    }
 </style>

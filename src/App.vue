@@ -2,14 +2,14 @@
   <div id="app">
     <banner></banner>
     <menu-header v-if="displayMenu == true"></menu-header>
-    <div class="anchor" id="profile"></div>
-    <profile></profile>
-    <div class="anchor" id="skills"></div>
-    <skills></skills>
-    <div class="anchor" id="projects"></div>
-    <projects></projects>
-    <div class="anchor" id="contact"></div>
-    <contact></contact>
+    <div v-if="staticMenu == false" class="anchor" id="profile"></div>
+    <profile :staticMenu="staticMenu"></profile>
+    <div v-if="staticMenu == false" class="anchor" id="skills"></div>
+    <skills :staticMenu="staticMenu"></skills>
+    <div v-if="staticMenu == false" class="anchor" id="projects"></div>
+    <projects :staticMenu="staticMenu"></projects>
+    <div v-if="staticMenu == false" class="anchor" id="contact"></div>
+    <contact :staticMenu="staticMenu"></contact>
     <foot></foot>
   </div>
 </template>
@@ -36,16 +36,22 @@ export default {
   },
   data() {
     return {
-      displayMenu: false
+      displayMenu: false,
+      staticMenu: false
     }
   },
   methods: {
     showMenu() {
       window.addEventListener('scroll', (e) => {
-        if(e.path[1].scrollY >= (e.path[1].window.innerHeight - 80)){
+        if(e.path[1].window.innerHeight <= 580) {
           this.displayMenu = true;
+          this.staticMenu = true;
+        } else if(e.path[1].scrollY >= (e.path[1].window.innerHeight - 80))   {
+          this.displayMenu = true;
+          this.staticMenu = false;
         } else {
           this.displayMenu = false;
+          this.staticMenu = false;
         }
         console.log(e.path[1]);
         // console.log(e.path[1].scrollY);

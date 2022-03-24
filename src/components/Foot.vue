@@ -39,6 +39,7 @@ export default {
             display: flex;
             justify-content: space-around;
             list-style: none;
+            padding: 0;
 
             a {
                 color: #f7f7f7;
@@ -64,6 +65,17 @@ export default {
                 line-height: 20px;
                 color: white;
             }
+        }
+    }
+
+    @media screen and (max-width: 570px) {
+        .foot-nav {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .copyright {
+            font-size: 0.7em!important;
         }
     }
 </style>

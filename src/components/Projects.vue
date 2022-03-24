@@ -1,7 +1,11 @@
 <template>
   <div class="content">
+    <div id="projects" v-if="this.staticMenu == true"></div>
       <div class="projects">
-          <h2>Mes Projets</h2>
+          <div class="projects-title">
+            <font-awesome-icon class="folder-open-icon" icon="folder-open" />
+            <h2>Mes Projets</h2>
+          </div>
           <hr>
           <thumbnail v-for="(project, index) in projects" :key="index" :project="project"></thumbnail>
           <!-- <div class="project">
@@ -44,6 +48,7 @@ export default {
             ]
         }
     },
+    props: ['staticMenu'],
     components: {
         'thumbnail': Thumbnail
     }
@@ -61,12 +66,23 @@ export default {
         width: 65%;
         margin-left: 20px;
 
+        &-title {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+
+            .folder-open-icon {
+                display: inline;
+                height: 35px;
+                margin-bottom: 0.5rem;
+                margin-right: 15px;
+            }
+        }
+
         h2 {
             font-size: 2.5em;
             text-align: left;
             color: black;
-            text-transform: uppercase;
-            margin-top: 30px;
         }
 
         hr {
@@ -96,5 +112,33 @@ export default {
             background: linear-gradient(90deg, rgba(234,249,253,1) 0%, rgba(234,249,253,0) 100%);
         
         }    
+    }
+
+    @media screen and (max-width: 992px) {
+        .content {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .projects {
+            width: 100%;
+            margin: 0;
+            padding: 0 10px;
+        }
+
+        .projects-image {
+            width: 100%;
+            height: 600px;
+
+            .filter {
+                background: linear-gradient(180deg, rgba(234,249,253,1) 0%, rgba(255,255,255,0) 50%, rgba(255,232,232,1) 100%);
+            }
+        }
+    }
+
+    @media screen and (max-width: 570px) {
+        h2 {
+            font-size: 1.8em!important;
+        }
     }
 </style>

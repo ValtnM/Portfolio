@@ -42,24 +42,25 @@ export default {
   },
   methods: {
     showMenu() {
-      window.addEventListener('scroll', (e) => {
-        if(e.path[1].window.innerHeight <= 580) {
+      // window.addEventListener('scroll', () => {
+        if(window.innerHeight <= 580) {
           this.displayMenu = true;
           this.staticMenu = true;
-        } else if(e.path[1].scrollY >= (e.path[1].window.innerHeight - 80))   {
+        } else if(window.scrollY >= (window.innerHeight - 80))   {
           this.displayMenu = true;
           this.staticMenu = false;
         } else {
           this.displayMenu = false;
           this.staticMenu = false;
         }
-        console.log(e.path[1]);
+        // console.log(window.scrollY);
         // console.log(e.path[1].scrollY);
-      })
+      // })
     }
   },
   created() {
     window.addEventListener('scroll', this.showMenu)
+    // this.showMenu()
   }
 }
 </script>

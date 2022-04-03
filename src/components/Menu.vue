@@ -31,7 +31,9 @@
 <script>
 export default {
   name: 'Menu',
+   methods: {
   
+  }
 }
 </script>
 
@@ -63,7 +65,7 @@ export default {
 
   @media screen and (max-width: 992px) {
     nav {
-      // padding: 0 50px;
+      padding: 10px 50px 0 50px;
       height: auto;
       min-height: 80px;
     }

@@ -13,12 +13,16 @@
         <hr>
         <div class="contact-list">
           <div class="email">
-            <img src="../assets/email.png" alt="Arobase">
-            <h5>Envoyez-moi un email</h5>
+            <a href="mailto:valentin.monteiro.pro@gmail.com">
+              <img src="../assets/email.png" alt="Arobase">
+              <h5>Envoyez-moi un email</h5>
+            </a>
           </div>
           <div class="linkedin">
-            <img src="../assets/logo-linkedin.webp" alt="Logo Linkedin">
-            <h5>Rejoignez-moi sur LinkedIn</h5>
+            <a href="https://www.linkedin.com/in/valentinmonteiro/" target="blank">
+              <img src="../assets/logo-linkedin.webp" alt="Logo Linkedin">
+              <h5>Rejoignez-moi sur LinkedIn</h5>
+            </a>
           </div>             
             
         </div>
@@ -35,6 +39,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  a {
+    color: black;
+  }
+
   .contact {
     display: flex;
     background: #ffe8e8;

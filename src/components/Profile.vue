@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    <div id="profile" v-if="this.staticMenu == true"></div>
     <div class="profile">
       <div class="profile-title">
         <font-awesome-icon class="address-card-icon" icon="address-card" />
@@ -8,25 +7,35 @@
       </div>
       <hr>
       <div class="profile__content">
-        <div class="parcours">
-          <h3>Mon parcours</h3>
-          <hr>
-          <p>
-            Après 4 années en tant que projectionniste de cinéma, j'ai décidé de me reconvertir dans l'informatique et plus particulièrement le développement web.
-            Au terme d'une formation de 8 mois avec Openclassrooms, j'ai obtenu mon diplôme.
-          </p>
-        </div>
-        <div class="formation">
-          <h3>Ma formation</h3>
-          <hr>
-          <div class="openclassrooms">
-            <img src="../assets/logo_openclassrooms.png" alt="Logo openclassrooms">
-            <p class="infos">
-              Développeur Web - Openclassrooms<br>
-              Titre RNCP de niveau 5<br>
-              De mai 2021 à janvier 2022
+        <div class="infos">
+          <div class="parcours">
+            <h3>Mon parcours</h3>
+            <hr>
+            <p>
+              Après 4 années en tant que projectionniste de cinéma, j'ai décidé de me reconvertir dans l'informatique et plus particulièrement le développement web.
+              Au terme d'une formation de 8 mois avec Openclassrooms, j'ai obtenu mon diplôme.
             </p>
           </div>
+          <div class="formation">
+            <h3>Ma formation</h3>
+            <hr>
+            <div class="openclassrooms">
+              <img src="../assets/logo_openclassrooms.png" alt="Logo openclassrooms">
+              <p class="infos">
+                Développeur Web - Openclassrooms<br>
+                Titre RNCP de niveau 5<br>
+                De mai 2021 à janvier 2022
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="cv">
+          <a href="./CV_Valentin_Monteiro.pdf" target="blank">
+            <button class="btn btn-primary">
+              <font-awesome-icon class="file-arrow-down-icon" icon="file-arrow-down" />
+              <div>Consulter mon CV</div>            
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -39,7 +48,15 @@
 
 <script>
 export default {
-  props: ['staticMenu']
+  data() {
+    return {
+      publicPath: process.env.BASE_URL,
+      PDFLink: require('@/assets/CV_Valentin_Monteiro.pdf')
+    }
+  },
+  mounted() {
+    console.log(process.env.BASE_URL)
+  }
 }
 </script>
 
@@ -107,11 +124,26 @@ export default {
 
     &__content {
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
 
       hr {
         width: 150px;
         margin: 20px auto;
+      }
+
+      .infos {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .cv .btn {
+        text-transform: uppercase;
+        margin-bottom: 50px;
+
+        .file-arrow-down-icon {
+          font-size: 2.5em;
+          padding: 10px;
+        }
       }
     }
 
@@ -182,7 +214,7 @@ export default {
   }
 
   @media screen and (max-width: 1080px) {
-    .profile__content {
+    .infos {
       flex-direction: column;
       margin: auto;
 

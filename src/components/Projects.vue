@@ -7,16 +7,13 @@
             <h2>Mes Projets</h2>
           </div>
           <hr>
-          <thumbnail v-for="(project, index) in projects" :key="index" :project="project"></thumbnail>
-          <!-- <div class="project">
-              <img src="../assets/reservia.png" alt="">
-              <div class="infos">
-                  <h4>Reservia</h4>
-                  <hr>
-                  <p>Intégration d'une maquette en HTML et CSS</p>
-                  <button class="btn btn-primary">Plus d'infos...</button>
-              </div>
-          </div> -->
+          <div class="projects-list">
+            <thumbnail class="thumbnail" v-for="(project, index) in projects" :key="index" :project="project">
+                <!-- <project-details :project="project"></project-details> -->
+
+            </thumbnail>
+          </div>
+          
       </div>
       <div class="projects-image">
         <img src="../assets/projets.jpg" alt="">
@@ -27,6 +24,7 @@
 
 <script>
 import Thumbnail from './Thumbnail.vue'
+// import ProjectDetails from './ProjectDetails.vue'
 
 export default {
     data() {
@@ -36,7 +34,10 @@ export default {
                     name: "Reservia",
                     short: "Intégration d'une maquette en HTML et CSS",
                     image: "reservia.png",
-                    alt: "Aperçu du projet Reservia"
+                    alt: "Aperçu du projet Reservia",
+                    description: "C'est un projet que j'ai réalisé durant ma formation avec Openclassrooms. L'objectif était de réaliser l'intégration d'une maquette en HTML et CSS sans l'utilisation de frameworks. Les difficultés ici étaient de rendre la page responsive et de rester fidèle à la maquette",
+                    skills: ["Reproduction d'une maquette graphique en HTML et CSS", "Adaptation de la page à toutes les tailles d'écran"],
+                    technologies: ['html.png', 'css.png']
 
                 },
                 {
@@ -50,7 +51,8 @@ export default {
     },
     props: ['staticMenu'],
     components: {
-        'thumbnail': Thumbnail
+        'thumbnail': Thumbnail,
+        // 'project-details': ProjectDetails
     }
 }
 </script>
@@ -90,6 +92,11 @@ export default {
             margin-bottom: 50px;
         }
 
+        .projects-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
         
         
     }

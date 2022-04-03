@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <banner></banner>
-    <menu-header v-if="displayMenu == true"></menu-header>
     <div v-if="staticMenu == false" class="anchor" id="profile"></div>
+    <menu-header v-if="displayMenu == true"></menu-header>
     <profile :staticMenu="staticMenu"></profile>
     <div v-if="staticMenu == false" class="anchor" id="skills"></div>
     <skills :staticMenu="staticMenu"></skills>
@@ -40,9 +40,8 @@ export default {
       staticMenu: false
     }
   },
-  methods: {
+  methods: {    
     showMenu() {
-      // window.addEventListener('scroll', () => {
         if(window.innerHeight <= 580) {
           this.displayMenu = true;
           this.staticMenu = true;
@@ -53,14 +52,11 @@ export default {
           this.displayMenu = false;
           this.staticMenu = false;
         }
-        // console.log(window.scrollY);
-        // console.log(e.path[1].scrollY);
-      // })
     }
   },
   created() {
+    
     window.addEventListener('scroll', this.showMenu)
-    // this.showMenu()
   }
 }
 </script>
@@ -82,4 +78,5 @@ a {
   position: relative;
   top: -80px;
 }
+
 </style>

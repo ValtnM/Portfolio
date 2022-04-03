@@ -1,23 +1,59 @@
 <template>
-    <div class="project">
-        <img :src="require('@/assets/' + project.image + '')" :alt="project.alt">
-        <div class="infos">
-            <h4>{{ project.name }}</h4>
-            <hr>
-            <p>{{ project.short }}</p>
-            <!-- <button class="btn btn-primary">Plus d'infos...</button> -->
+    <div class="project-container">
+        <div class="project" @click="showDetails()">
+            <img :src="require('@/assets/' + project.image + '')" :alt="project.alt">
+            <div class="infos">
+                <h4>{{ project.name }}</h4>
+                <hr>
+                <p>{{ project.short }}</p>
+                <!-- <button class="btn btn-primary">Plus d'infos...</button> -->
+            </div>
         </div>
+        
+        <project-details v-if="displayDetails == true" :currentProject="this.project" @closeDetails="closeDetailsWindow()"></project-details>
     </div>
 </template>
 
 <script>
+import ProjectDetails from './ProjectDetails.vue'
+
 
 export default {
-    props: ['project']
+    data() {
+        return {
+            currentProject: this.project,
+            displayDetails: false
+            // projectName: this.currentProject
+        }
+    },
+    props: ['project'],
+    components: {
+        'project-details': ProjectDetails
+    },
+
+    methods: {
+        test(){
+            console.log(this.currentProject);
+        },
+        showDetails() {
+            this.displayDetails = true;
+        },
+        closeDetailsWindow() {
+            this.displayDetails = false;
+        }
+    }
 }
 </script>
 
 <style scoped lang="scss">
+    .project-container {
+        display: flex;
+        // flex-direction: row;
+        flex-wrap: wrap;
+        // width: 100%;
+        // margin: auto;
+    }
+
     .project {
         width: 300px;
         height: 175px;
@@ -26,7 +62,7 @@ export default {
         border-radius: 20px;
         box-shadow: 0 2px 5px black;
         cursor: pointer;
-        margin: 20px;
+        margin: 20px auto;
         img {
             width: 100%;
             height: 100%;

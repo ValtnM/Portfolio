@@ -158,7 +158,6 @@ export default {
 
         h2 {
             font-size: 2.5em;
-            // text-transform: uppercase;
             color: black;
             text-align: left;
         }

@@ -52,15 +52,18 @@ export default {
 
         img {
             width: 300px;
+            max-width: 90%;
             height: auto;
             margin-right: 50px;
             border-radius: 20px;
+            object-fit: contain;
         }
 
         &__text {
             text-align: left;
             color: white;
-            font-size: 1.4em;            
+            font-size: 1.4em;  
+            padding: 10px;          
            
         }
     }
@@ -110,15 +113,16 @@ export default {
         }
     }
 
-    @media screen and (max-width: 690px) {
+    @media screen and (max-width: 690px) and (min-height: 580px) {
         .introduction {
             display: flex;
             flex-direction: column;
-            // align-items: flex-start;
             margin: auto;
+            max-height: 95vh;
 
             img {
-                width: 80%;
+                width: auto;
+                max-height: 50vh;
                 margin-bottom: 20px;
             }
 
@@ -140,9 +144,9 @@ export default {
     @media screen and (max-width: 500px) {
         .introduction {
             padding: 50px 20px;
-            img {
-                width: 90%;
-            }
+            // img {
+            //     width: 90%;
+            // }
 
             &__text {
                 width: 90%;
@@ -151,8 +155,14 @@ export default {
         }
     }
 
-    @media screen and (max-height: 580px) {
-        
+    @media screen and (max-height: 579px) {
+        .introduction {
+            max-height: 95vh;
+
+            img {
+                max-height: 80vh;
+            }
+        }
 
         .arrow {
             display: none;

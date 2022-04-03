@@ -8,7 +8,7 @@
       <hr>
       <div class="profile__content">
         <div class="infos">
-          <div class="parcours">
+          <div class="parcours" @click="parcoursLog">
             <h3>Mon parcours</h3>
             <hr>
             <p>
@@ -50,12 +50,33 @@
 export default {
   data() {
     return {
-      publicPath: process.env.BASE_URL,
-      PDFLink: require('@/assets/CV_Valentin_Monteiro.pdf')
+      // publicPath: process.env.BASE_URL,
+      // PDFLink: require('@/assets/CV_Valentin_Monteiro.pdf'),
+      // parcours: undefined,
     }
   },
-  mounted() {
-    console.log(process.env.BASE_URL)
+  methods: {
+    runAnimation() {
+      const parcours = document.querySelector('.parcours')
+      const formation = document.querySelector('.formation')
+      
+      let topOfBlock = parcours.getBoundingClientRect().top;
+      if(topOfBlock - 200 < 0) {
+        parcours.classList.add('parcours-active');
+        formation.classList.add('formation-active')
+      }
+      console.log(parcours.getBoundingClientRect().top);
+    },
+    parcoursLog() {
+      this.getBlock()
+      console.log(document.scrollTop);
+    },
+    getBlock(){
+      this.parcours = document.querySelector('.parcours');
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.runAnimation)
   }
 }
 </script>
@@ -156,6 +177,12 @@ export default {
       padding: 15px;
       background: #f9f9f9;
       margin-bottom: 30px;
+      transform: translateX(-3000px);
+
+      
+      &-active {
+        animation: block 600ms forwards 200ms;
+      }
 
       &:hover {
         background: #F3F3FF;
@@ -166,6 +193,7 @@ export default {
       }
     }
 
+
     .formation {
       width: 45%;
       height: 300px;
@@ -175,6 +203,11 @@ export default {
       padding: 15px;
       background: #f9f9f9;
       margin-bottom: 30px;
+      transform: translateX(-3000px);
+
+      &-active {
+        animation: block 600ms forwards;
+      }
 
       &:hover {
         background: #F3F3FF;
@@ -201,6 +234,7 @@ export default {
     }
   }
 
+
   @media screen and (max-width: 1380px) {
     .openclassrooms {
       flex-direction: column;
@@ -222,12 +256,18 @@ export default {
         width: 90%;
         height: 220px;
         margin: 0 auto 30px auto;
+        &-active {
+          animation: block 600ms forwards;
+        }
       }
 
       .formation {
         width: 90%;
         height: 220px;
         margin: 0 auto 30px auto;
+        &-active {
+          animation: block 600ms forwards 200ms;
+        }
 
         .openclassrooms {
           flex-direction: row;
@@ -248,7 +288,6 @@ export default {
 
         .profile-filter {
           height: 100%;
-          // background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(232,249,245,1) 100%);
           background: linear-gradient(180deg, rgba(232,249,245,1) 0%, rgba(255,255,255,0) 50%, rgba(255,238,218,1) 100%);
         }
       }
@@ -277,6 +316,21 @@ export default {
       .openclassrooms {
         flex-direction: column!important;
       }
+    }
+  }
+
+  @keyframes block {
+    0% {
+      transform: translateX(-500px);
+    }
+    60% {
+      transform: translateX(0);
+    }
+    80% {
+      transform: translateX(-20px);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
 </style>

@@ -9,7 +9,6 @@
           <hr>
           <div class="projects-list">
             <thumbnail class="thumbnail" v-for="(project, index) in projects" :key="index" :project="project">
-                <!-- <project-details :project="project"></project-details> -->
 
             </thumbnail>
           </div>
@@ -24,7 +23,6 @@
 
 <script>
 import Thumbnail from './Thumbnail.vue'
-// import ProjectDetails from './ProjectDetails.vue'
 
 export default {
     data() {
@@ -52,7 +50,6 @@ export default {
     props: ['staticMenu'],
     components: {
         'thumbnail': Thumbnail,
-        // 'project-details': ProjectDetails
     }
 }
 </script>

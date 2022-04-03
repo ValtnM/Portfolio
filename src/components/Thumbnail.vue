@@ -6,7 +6,6 @@
                 <h4>{{ project.name }}</h4>
                 <hr>
                 <p>{{ project.short }}</p>
-                <!-- <button class="btn btn-primary">Plus d'infos...</button> -->
             </div>
         </div>
         
@@ -23,7 +22,6 @@ export default {
         return {
             currentProject: this.project,
             displayDetails: false
-            // projectName: this.currentProject
         }
     },
     props: ['project'],
@@ -48,10 +46,7 @@ export default {
 <style scoped lang="scss">
     .project-container {
         display: flex;
-        // flex-direction: row;
         flex-wrap: wrap;
-        // width: 100%;
-        // margin: auto;
     }
 
     .project {

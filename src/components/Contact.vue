@@ -34,7 +34,22 @@
 
 <script>
 export default {
-  props: ['staticMenu']
+  props: ['staticMenu'],
+  methods: {
+    runAnimation() {
+      const email = document.querySelector('.email')
+      const linkedin = document.querySelector('.linkedin')
+      
+      let topOfBlock = email.getBoundingClientRect().top;
+      if(topOfBlock - (innerHeight / 2 )< 0) {
+        email.classList.add('email-active');
+        linkedin.classList.add('linkedin-active')
+      }
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.runAnimation)
+  }
 }
 </script>
 
@@ -115,17 +130,47 @@ export default {
       background: white;
       transform: scale(1);
       transition: ease-in-out 0.2s;
+      opacity: 0;
 
       &:hover {
         background: #E8F9F5;
         transform: scale(1.1);
       }
+
+      &-active {
+        animation: blocksAppearance 600ms forwards;
+      }
+    }
+    
+    .email-active {
+      animation: blocksAppearance 600ms forwards;
+    }
+    .linkedin-active {
+      animation: blocksAppearance 600ms forwards 200ms;
     }
 
     img {
       width: 150px;
       margin-bottom: 20px;
     }
+  }
+
+  @keyframes blocksAppearance {
+      0% {
+        transform: translateX(200px);
+        opacity: 0;
+      }
+      60% {
+        transform: translateX(0);
+      }
+      80% {
+        transform: translateX(20px);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
   }
 
   @media screen and (max-width: 992px) {

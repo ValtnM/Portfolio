@@ -145,7 +145,22 @@
 
 <script>
 export default {
-    props: ['staticMenu']
+    props: ['staticMenu'],
+    methods: {
+        runAnimation(){
+            const bar = document.querySelectorAll('.full')
+            const topOfBlock = bar[0].getBoundingClientRect().top;
+
+            for(let i = 0; i < bar.length; i++) {
+                if(topOfBlock - (innerHeight/2) < 0) {
+                    bar[i].classList.add('active')
+                }
+            }
+        }
+    },
+    created(){
+        window.addEventListener('scroll', this.runAnimation);
+    }
 }
 </script>
 
@@ -226,7 +241,6 @@ export default {
                     width: 100%;
                     height: 10px;
                     background: white;
-                    // border: 1px black solid;
                     border-radius: 10px;
                 }
                 .full {
@@ -243,32 +257,55 @@ export default {
                 .full {
                     width: 90%;
                     background: #FF0000;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    
                 }
             }
             .critical-spirit {
                 .full {
                     width: 85%;
                     background: #FF3A00;
+                    transform: scaleX(0);
+                    transform-origin: left;
                 }
             }
             .js, .github {
                 .full {
                     width: 80%;
                     background: #D68910;
+                    transform: scaleX(0);
+                    transform-origin: left;
                 }
             }
             .vuejs {
                 .full {
                     width: 75%;
                     background: #D4AC0D;
+                    transform: scaleX(0);
+                    transform-origin: left;
                 }
             }
             .nodejs, .sql {
                 .full {
                     width: 70%;
                     background: #F1C40F;
+                    transform: scaleX(0);
+                    transform-origin: left;
                 }
             }
+            .active {
+                animation: fillBar 2s forwards;
+            }
+        }
+    }
+
+    @keyframes fillBar {
+        0% {
+            transform: scaleX(0);
+        }
+        100% {
+            transform: scaleX(1);
         }
     }
 

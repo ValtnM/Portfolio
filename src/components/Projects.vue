@@ -47,6 +47,29 @@ export default {
             ]
         }
     },
+      methods: {
+        runAnimation() {
+            const projects = document.querySelectorAll('.thumbnail');
+            
+            for(let i=0; i < projects.length; i++) {
+                let topOfBlock = projects[i].getBoundingClientRect().top;
+                if (topOfBlock - (innerHeight/2) < 0) {
+                    projects[i].classList.add('thumbnail-active');
+                    let delay = (projects.length - i) * 200;
+                    projects[i].style.animationDelay = `${delay}ms`
+                }
+            }       
+        },
+        // arcoursLog() {
+        //     this.getBlock()
+        // },
+        // getBlock(){
+        //     this.parcours = document.querySelector('.parcours');
+        // }p
+    },
+    created() {
+        window.addEventListener('scroll', this.runAnimation)
+    },
     props: ['staticMenu'],
     components: {
         'thumbnail': Thumbnail,
@@ -93,6 +116,13 @@ export default {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+
+            .thumbnail {
+                opacity: 0;
+                &-active {
+                    animation: block 600ms forwards;
+                }
+            }
         }
         
         
@@ -143,6 +173,24 @@ export default {
     @media screen and (max-width: 570px) {
         h2 {
             font-size: 1.8em!important;
+        }
+    }
+
+    @keyframes block {
+        0% {
+        transform: translateX(-200px);
+        opacity: 0;
+        }
+        60% {
+        transform: translateX(0);
+        }
+        80% {
+        transform: translateX(-20px);
+        opacity: 0.9;
+        }
+        100% {
+        transform: translateX(0);
+        opacity: 1;
         }
     }
 </style>

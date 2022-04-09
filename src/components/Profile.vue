@@ -47,33 +47,18 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      // publicPath: process.env.BASE_URL,
-      // PDFLink: require('@/assets/CV_Valentin_Monteiro.pdf'),
-      // parcours: undefined,
-    }
-  },
+export default {  
   methods: {
     runAnimation() {
       const parcours = document.querySelector('.parcours')
       const formation = document.querySelector('.formation')
       
       let topOfBlock = parcours.getBoundingClientRect().top;
-      if(topOfBlock - 200 < 0) {
+      if(topOfBlock - (innerHeight / 2 )< 0) {
         parcours.classList.add('parcours-active');
         formation.classList.add('formation-active')
       }
-      console.log(parcours.getBoundingClientRect().top);
     },
-    parcoursLog() {
-      this.getBlock()
-      console.log(document.scrollTop);
-    },
-    getBlock(){
-      this.parcours = document.querySelector('.parcours');
-    }
   },
   created() {
     window.addEventListener('scroll', this.runAnimation)
@@ -177,7 +162,8 @@ export default {
       padding: 15px;
       background: #f9f9f9;
       margin-bottom: 30px;
-      transform: translateX(-3000px);
+      // transform: translateX(-3000px);
+      opacity: 0;
 
       
       &-active {
@@ -203,7 +189,8 @@ export default {
       padding: 15px;
       background: #f9f9f9;
       margin-bottom: 30px;
-      transform: translateX(-3000px);
+      // transform: translateX(-3000px);
+      opacity: 0;
 
       &-active {
         animation: block 600ms forwards;
@@ -321,15 +308,18 @@ export default {
 
   @keyframes block {
     0% {
-      transform: translateX(-500px);
+      opacity: 0;
+      transform: translateX(-200px);
     }
     60% {
       transform: translateX(0);
     }
     80% {
+      opacity: 0.9;
       transform: translateX(-20px);
     }
     100% {
+      opacity: 1;
       transform: translateX(0);
     }
   }

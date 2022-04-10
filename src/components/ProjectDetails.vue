@@ -10,7 +10,9 @@
                 <img :src="require('@/assets/' + currentProject.image + '')" alt="">
                 <div class="description-text">
                     <p>{{ currentProject.description }}</p>
-                    <button class="btn btn-success">Accéder au site</button>
+                    <a :href="currentProject.link" target="blank">
+                        <button class="btn btn-success">Accéder au site</button>
+                    </a>
                 </div>
                 <hr>
             </div>
@@ -49,11 +51,10 @@ export default {
         bottom: 0;
         left: 0;
         background: rgba(0,0,0,0.6);
-        z-index: 10;
+        z-index: 100;
     }
 
-    .details {
-   
+    .details {   
         width: 80%;
         height: 90vh;
         margin: 50px auto;
@@ -197,7 +198,7 @@ export default {
 
     @media screen and (max-width: 500px) {
         .content {
-            font-size: 0.7em;
+            font-size: 0.7em!important;
 
             .technologies {
                 img {
@@ -206,5 +207,8 @@ export default {
                 }
             }
         }
+        // h3 {
+        //     font-size: 2em!important;
+        // }
     }
 </style>

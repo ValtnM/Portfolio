@@ -128,20 +128,13 @@ export default {
       justify-content: space-between;
       align-items: center;
       background: white;
-      transform: scale(1);
-      transition: ease-in-out 0.2s;
       opacity: 0;
 
       &:hover {
         background: #E8F9F5;
-        transform: scale(1.1);
-      }
-
-      &-active {
-        animation: blocksAppearance 600ms forwards;
-      }
+      } 
     }
-    
+      
     .email-active {
       animation: blocksAppearance 600ms forwards;
     }

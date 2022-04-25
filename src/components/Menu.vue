@@ -11,7 +11,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#profile">Qui suis-je ?</a>
+            <a class="nav-link" href="#profile">Mon profil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#skills">Mes compétences</a>

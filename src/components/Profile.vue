@@ -3,26 +3,27 @@
     <div class="profile">
       <div class="profile-title">
         <font-awesome-icon class="address-card-icon" icon="address-card" />
-        <h2>Qui suis-je ?</h2>
+        <h2>Mon profil</h2>
       </div>
       <hr>
       <div class="profile__content">
         <div class="infos">
           <div class="parcours" @click="parcoursLog">
-            <h3>Mon parcours</h3>
+            <h3>Qui suis-je ?</h3>
             <hr>
             <p>
-              Après 4 années en tant que projectionniste de cinéma, j'ai décidé de me reconvertir dans l'informatique et plus particulièrement le développement web.
-              Au terme d'une formation de 8 mois avec Openclassrooms, j'ai obtenu mon diplôme.
+              Après avoir exercé plusieurs années en tant que projectionniste de cinéma, j'ai décidé de me reconvertir dans l'informatique et plus particulièrement le développement web.
+              Au terme d'un parcours de formation avec Openclassrooms, j'ai obtenu mon diplôme.<br>
+              Aujourd'hui, je suis en mesure de répondre aux attentes des entreprises, et c'est avec beaucoup de motivation que je souhaite mettre à leur service les compétences que j'ai acquises.
             </p>
           </div>
           <div class="formation">
             <h3>Ma formation</h3>
             <hr>
             <div class="openclassrooms">
-              <img src="../assets/logo_openclassrooms.png" alt="Logo openclassrooms">
-              <p class="infos">
-                Développeur Web - Openclassrooms<br>
+              <img src="../assets/openclassrooms.jpg" alt="Logo openclassrooms">
+              <p>
+                <span>Développeur Web</span><br>
                 Titre RNCP de niveau 5<br>
                 De mai 2021 à janvier 2022
               </p>
@@ -139,7 +140,7 @@ export default {
 
       .infos {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-around;        
       }
 
       .cv .btn {
@@ -155,14 +156,13 @@ export default {
 
     .parcours {
       width: 45%;
-      height: 300px;
+      height: auto;
       border: 1px white solid;
       border-radius: 15px;
       box-shadow: 0 2px 5px black;
       padding: 15px;
       background: #f9f9f9;
       margin-bottom: 30px;
-      // transform: translateX(-3000px);
       opacity: 0;
 
       
@@ -182,14 +182,12 @@ export default {
 
     .formation {
       width: 45%;
-      height: 300px;
       border: 1px white solid;
       border-radius: 15px;
       box-shadow: 0 2px 5px black;
       padding: 15px;
       background: #f9f9f9;
       margin-bottom: 30px;
-      // transform: translateX(-3000px);
       opacity: 0;
 
       &-active {
@@ -204,16 +202,22 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
+        margin-top: 50px;        
 
-        .infos {
+        p {
+          display: inline;
           text-align: left;
           margin: auto 0;
+          
+          span {
+            font-size: 1.2em;
+            font-weight: 500;
+          }
         }
 
         img {
-          width: 80px;
-          height: 80px;
+          width: 120px;
+          // height: 120px;
           margin-right: 15px;
         }
       }
@@ -225,12 +229,16 @@ export default {
   @media screen and (max-width: 1380px) {
     .openclassrooms {
       flex-direction: column;
-      margin-top: 20px!important;
+
+      p {
+        text-align: center!important;
+
+      }
     }
 
     img {
-      // order: 2;
-      margin-bottom: 10px!important;
+      margin-bottom: 20px!important;
+      margin-right: 0!important;
     }
   }
 
@@ -241,7 +249,6 @@ export default {
 
       .parcours {
         width: 90%;
-        height: 220px;
         margin: 0 auto 30px auto;
         &-active {
           animation: block 600ms forwards;
@@ -250,7 +257,6 @@ export default {
 
       .formation {
         width: 90%;
-        height: 220px;
         margin: 0 auto 30px auto;
         &-active {
           animation: block 600ms forwards 200ms;

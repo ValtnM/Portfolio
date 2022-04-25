@@ -14,60 +14,42 @@
             <div class="allskills">
                 <div class="hardskills">
                     <div class="html">
-                        <div class="bar-title">
-                            <h4>HTML/CSS</h4>
-                            <div class="percentage">90%</div>
-                        </div>
+                        <h4>HTML/CSS</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="js">
-                        <div class="bar-title">
-                            <h4>JavaScript ES6</h4>
-                            <div class="percentage">80%</div>
-                        </div>
+                        <h4>JavaScript ES6</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="github">
-                        <div class="bar-title">
-                            <h4>GitHub</h4>
-                            <div class="percentage">80%</div>
-                        </div>
+                        <h4>GitHub</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="vuejs">
-                        <div class="bar-title">
-                            <h4>Vue.js</h4>
-                            <div class="percentage">75%</div>
-                        </div>
+                        <h4>Vue.js</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="nodejs">
-                        <div class="bar-title">
-                            <h4>Node.js</h4>
-                            <div class="percentage">70%</div>
-                        </div>
+                        <h4>Node.js</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="sql">
-                        <div class="bar-title">
-                            <h4>SQL</h4>
-                            <div class="percentage">70%</div>
-                        </div>
+                        <h4>SQL</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
@@ -76,60 +58,42 @@
                 </div>
                 <div class="softskills">
                     <div class="critical-spirit">
-                        <div class="bar-title">
-                            <h4>Esprit critique</h4>
-                            <div class="percentage">85%</div>
-                        </div>
+                        <h4>Esprit critique</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="js">
-                        <div class="bar-title">
-                            <h4>Consciencieux</h4>
-                            <div class="percentage">80%</div>
-                        </div>
+                        <h4>Consciencieux</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="github">
-                        <div class="bar-title">
-                            <h4>Esprit d'équipe</h4>
-                            <div class="percentage">75%</div>
-                        </div>
+                        <h4>Esprit d'équipe</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="vuejs">
-                        <div class="bar-title">
-                            <h4>Capacité à apprendre</h4>
-                            <div class="percentage">75%</div>
-                        </div>
+                        <h4>Capacité à apprendre</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="nodejs">
-                        <div class="bar-title">
-                            <h4>Autonome</h4>
-                            <div class="percentage">70%</div>
-                        </div>
+                        <h4>Autonome</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
                     <div class="sql">
-                        <div class="bar-title">
-                            <h4>Persévérant</h4>
-                            <div class="percentage">70%</div>
-                        </div>
+                        <h4>Persévérant</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
@@ -225,14 +189,12 @@ export default {
         .hardskills, .softskills {
             width: 45%;
             margin: 0 50px ;
-            h4, .percentage {
+            h4 {
                 font-size: 1.1em;
                 color: black;
+                text-align: left;
             }
-            .bar-title {
-                display: flex;
-                justify-content: space-between;
-            }
+            
             .bar {
                 position: relative;
                 width: 100%;

@@ -20,7 +20,7 @@
           </div>
           <div class="linkedin">
             <a href="https://www.linkedin.com/in/valentinmonteiro/" target="blank">
-              <img src="../assets/logo-linkedin.webp" alt="Logo Linkedin">
+              <img src="../assets/logo-linkedin.jpg" alt="Logo Linkedin">
               <h5>Rejoignez-moi sur LinkedIn</h5>
             </a>
           </div>             

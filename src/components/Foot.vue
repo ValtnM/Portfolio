@@ -4,7 +4,7 @@
         <h2>Mon Portfolio</h2>
       </a>
       <ul class="foot-nav">
-          <li><a href="#profile">Qui suis-je ?</a></li>
+          <li><a href="#profile">Mon profil</a></li>
           <li><a href="#skills">Mes compétences</a></li>
           <li><a href="#projects">Mes projets</a></li>
           <li><a href="#contact">Contactez-moi</a></li>

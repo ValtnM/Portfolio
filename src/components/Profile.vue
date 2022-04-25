@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="cv">
-          <a href="./CV_Valentin_Monteiro.pdf" target="blank">
+          <a href="./CV-Valentin-Monteiro.pdf" target="blank">
             <button class="btn btn-primary">
               <font-awesome-icon class="file-arrow-down-icon" icon="file-arrow-down" />
               <div>Consulter mon CV</div>            
@@ -217,7 +217,6 @@ export default {
 
         img {
           width: 120px;
-          // height: 120px;
           margin-right: 15px;
         }
       }
@@ -229,6 +228,7 @@ export default {
   @media screen and (max-width: 1380px) {
     .openclassrooms {
       flex-direction: column;
+      margin-top: 30px!important;
 
       p {
         text-align: center!important;

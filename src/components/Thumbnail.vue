@@ -44,44 +44,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    // .project-container {
-    //     display: inline-block;
-    //     margin: 0 20px;
-    //     // transition: transform 200ms ease-in;
-    //     // &:hover {
-    //     //     transform: scale(1.1);
-    //     // }
-    //     // flex-wrap: wrap;
-    //     //  opacity: 0;
-    //     // display: inline-block;
-    //     // margin: 0 20px;
-    //     // // &-active {
-    //         animation: block 2s forwards;
-    //     // // }
-    // }
-    @keyframes block {
-        0% {
-        // transform: translateX(-200px);
-            opacity: 0;
-        }
-        // 60% {
-        // transform: translateX(0);
-        // }
-        80% {
-        // transform: translateX(-20px);
-            opacity: 0.9;
-        }
-        100% {
-        // transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
+    
     .project {
         width: 300px;
         height: 175px;
         position: relative;
-        // display: inline-block;
         border-radius: 20px;
         box-shadow: 0 2px 5px black;
         cursor: pointer;

@@ -4,14 +4,12 @@
       <div class="projects">
           <div class="projects-title">
             <font-awesome-icon class="folder-open-icon" icon="folder-open" />
-            <h2>Mes Projets</h2>
+            <h2>Mes projets</h2>
           </div>
           <hr>
-          <!-- <div class="projects-list"> -->
-            <thumbnail class="thumbnail" v-for="(project, index) in projects" :key="index" :project="project">
-                
-            </thumbnail>
-          <!-- </div> -->
+        <thumbnail class="thumbnail" v-for="(project, index) in projects" :key="index" :project="project">
+            
+        </thumbnail>
           
       </div>
       <div class="projects-image">
@@ -43,37 +41,15 @@ export default {
                     short: "Dynamisation d'une page web avec des animations CSS",
                     image: "ohmyfood.png",
                     alt: "Aperçu du projet Ohmyfood",
-                    description: "C'est un projet que j'ai réalisé pendant ma formation avec Openclassrooms. L'objectif était de construire un site en mobile first à partir de maquettes graphiques. Certaines animations devaient être créée pour le rendre plus dynamique.",
-                    skills: ["Création d'animations CSS", "Optimisation du code grâce à Sass", "Versionning du projet"],
+                    description: "C'est un projet que j'ai réalisé pendant ma formation avec Openclassrooms. L'objectif était de construire un site en mobile first à partir de maquettes graphiques. Certaines animations devaient être créées pour le rendre plus dynamique.",
+                    skills: ["Création d'animations CSS", "Optimisation du code grâce à Sass", "Versioning du projet"],
                     technologies: ["html.png", "css.png", "sass.png", "git.png"],
                     link: "https://valtnm.github.io/ValentinMonteiro_3_09072021/"
                 }
             ]
         }
     },
-    //   methods: {
-    //     runAnimation() {
-    //         const projects = document.querySelectorAll('.thumbnail');
-            
-    //         for(let i=0; i < projects.length; i++) {
-    //             let topOfBlock = projects[i].getBoundingClientRect().top;
-    //             if (topOfBlock - (innerHeight/2) < 0) {
-    //                 projects[i].classList.add('thumbnail-active');
-    //                 // let delay = (projects.length - i) * 200;
-    //                 // projects[i].style.animationDelay = `${delay}ms`
-    //             }
-    //         }       
-    //     },
-    //     // arcoursLog() {
-    //     //     this.getBlock()
-    //     // },
-    //     // getBlock(){
-    //     //     this.parcours = document.querySelector('.parcours');
-    //     // }p
-    // },
-    // created() {
-    //     window.addEventListener('scroll', this.runAnimation)
-    // },
+    
     props: ['staticMenu'],
     components: {
         'thumbnail': Thumbnail,
@@ -116,20 +92,11 @@ export default {
             margin-bottom: 50px;
         }
 
-        // .projects-list {
-        //     display: flex;
-        //     justify-content: space-around;
-        //     flex-wrap: wrap;
             
-            .thumbnail {
-                // opacity: 0;
-                display: inline-block;
-                margin: 0 20px;
-                // &-active {
-                //     animation: block 2s forwards;
-                // }
-            }
-        // }
+        .thumbnail {
+            display: inline-block;
+            margin: 0 20px;
+        }
         
         
     }
@@ -185,21 +152,5 @@ export default {
         }
     }
 
-    @keyframes block {
-        0% {
-        // transform: translateX(-200px);
-        opacity: 0;
-        }
-        // 60% {
-        // transform: translateX(0);
-        // }
-        80% {
-        // transform: translateX(-20px);
-        opacity: 0.9;
-        }
-        100% {
-        // transform: translateX(0);
-        opacity: 1;
-        }
-    }
+   
 </style>

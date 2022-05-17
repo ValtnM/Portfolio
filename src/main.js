@@ -14,8 +14,9 @@ import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faPhone, faAnglesDown, faCopyright, faAddressCard, faFileArrowDown, faWrench, faFolderOpen, faEnvelope, faXmark)
+library.add(faPhone, faAnglesDown, faCopyright, faAddressCard, faFileArrowDown, faWrench, faFolderOpen, faEnvelope, faXmark, faGithub)
 // Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 createApp(App)

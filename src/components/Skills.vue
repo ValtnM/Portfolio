@@ -34,6 +34,13 @@
                             <div class="full"></div>
                         </div>
                     </div>
+                    <div class="reactjs">
+                        <h4>React JS</h4>
+                        <div class="bar">
+                            <div class="empty"></div>
+                            <div class="full"></div>
+                        </div>
+                    </div>
                     <div class="vuejs">
                         <h4>Vue.js</h4>
                         <div class="bar">
@@ -240,7 +247,7 @@ export default {
                     transform-origin: left;
                 }
             }
-            .vuejs {
+            .vuejs, .reactjs {
                 .full {
                     width: 75%;
                     background: #D4AC0D;

@@ -30,13 +30,24 @@
             </div>
           </div>
         </div>
-        <div class="cv">
-          <a href="./CV-Valentin-Monteiro.pdf" target="blank">
-            <button class="btn btn-primary">
-              <font-awesome-icon class="file-arrow-down-icon" icon="file-arrow-down" />
-              <div>Consulter mon CV</div>            
-            </button>
-          </a>
+        <div class="link-btn">
+          <div class="cv">
+            <a href="./CV-Valentin-Monteiro.pdf" target="blank">
+              <button class="btn btn-primary">
+                <font-awesome-icon class="file-arrow-down-icon" icon="file-arrow-down" />
+                <div>Mon CV</div>            
+              </button>
+            </a>
+          </div>
+          <div class="github">
+            <a href="./CV-Valentin-Monteiro.pdf" target="blank">
+              <button class="btn btn-primary">
+                <!-- <font-awesome-icon class="github-icon" icon="github" /> -->
+                <img class="github-icon" src="../assets/github.svg" alt="logo github">
+                <div>Mon GitHub</div>            
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -133,6 +144,12 @@ export default {
       display: flex;
       flex-direction: column;
 
+      .link-btn {
+        display: flex;
+        justify-content: center;
+
+      }
+
       hr {
         width: 150px;
         margin: 20px auto;
@@ -143,16 +160,25 @@ export default {
         justify-content: space-around;        
       }
 
-      .cv .btn {
-        text-transform: uppercase;
-        margin-bottom: 50px;
+      .cv, .github {
+        margin: 10px 20px;
 
-        .file-arrow-down-icon {
-          font-size: 2.5em;
-          padding: 10px;
+        .btn {          
+          width: 200px;
+          height: 120px;
+          text-transform: uppercase;
+          margin-bottom: 50px;
+
+          .file-arrow-down-icon {
+            font-size: 2.5em;
+            padding: 10px;
+          }
+          .github-icon {
+            margin: 0!important;
+          }
         }
       }
-    }
+    } 
 
     .parcours {
       width: 45%;
@@ -300,6 +326,15 @@ export default {
 
     h2 {
       font-size: 1.8em;
+    }
+
+    .link-btn {
+      flex-direction: column;
+
+      .btn {
+        width: 70%!important;
+        margin-bottom: 0!important;
+      }
     }
   }
 

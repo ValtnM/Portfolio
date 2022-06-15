@@ -40,9 +40,8 @@
             </a>
           </div>
           <div class="github">
-            <a href="./CV-Valentin-Monteiro.pdf" target="blank">
+            <a href="https://github.com/ValtnM" target="blank">
               <button class="btn btn-primary">
-                <!-- <font-awesome-icon class="github-icon" icon="github" /> -->
                 <img class="github-icon" src="../assets/github.svg" alt="logo github">
                 <div>Mon GitHub</div>            
               </button>

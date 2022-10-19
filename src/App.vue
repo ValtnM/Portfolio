@@ -16,7 +16,7 @@
 
 <script>
 import Banner from './components/Banner.vue'
-import Menu from './components/Menu.vue'
+import Menu from './components/Navigation.vue'
 import Profile from './components/Profile.vue'
 import Skills from './components/Skills.vue'
 import Projects from './components/Projects.vue'
@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 #app {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

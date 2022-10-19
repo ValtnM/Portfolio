@@ -27,22 +27,8 @@
                             <div class="full"></div>
                         </div>
                     </div>
-                    <div class="github">
-                        <h4>GitHub</h4>
-                        <div class="bar">
-                            <div class="empty"></div>
-                            <div class="full"></div>
-                        </div>
-                    </div>
                     <div class="reactjs">
-                        <h4>React JS</h4>
-                        <div class="bar">
-                            <div class="empty"></div>
-                            <div class="full"></div>
-                        </div>
-                    </div>
-                    <div class="vuejs">
-                        <h4>Vue.js</h4>
+                        <h4>React.js</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
@@ -55,8 +41,29 @@
                             <div class="full"></div>
                         </div>
                     </div>
+                    <div class="vuejs">
+                        <h4>Vue.js</h4>
+                        <div class="bar">
+                            <div class="empty"></div>
+                            <div class="full"></div>
+                        </div>
+                    </div>
                     <div class="sql">
                         <h4>SQL</h4>
+                        <div class="bar">
+                            <div class="empty"></div>
+                            <div class="full"></div>
+                        </div>
+                    </div>
+                    <div class="typescript">
+                        <h4>TypeScript</h4>
+                        <div class="bar">
+                            <div class="empty"></div>
+                            <div class="full"></div>
+                        </div>
+                    </div>
+                    <div class="github">
+                        <h4>GitHub</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
@@ -71,35 +78,35 @@
                             <div class="full"></div>
                         </div>
                     </div>
-                    <div class="js">
+                    <div class="conscientious">
                         <h4>Consciencieux</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
-                    <div class="github">
+                    <div class="team-spirit">
                         <h4>Esprit d'équipe</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
-                    <div class="vuejs">
+                    <div class="learn-ability">
                         <h4>Capacité à apprendre</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
-                    <div class="nodejs">
+                    <div class="autonomy">
                         <h4>Autonome</h4>
                         <div class="bar">
                             <div class="empty"></div>
                             <div class="full"></div>
                         </div>
                     </div>
-                    <div class="sql">
+                    <div class="perseverance">
                         <h4>Persévérant</h4>
                         <div class="bar">
                             <div class="empty"></div>
@@ -140,7 +147,7 @@ export default {
     .skills {
         position: relative;
         display: flex;
-        height: 600px;
+        height: 650px;
 
         h2 {
             font-size: 2.5em;
@@ -157,7 +164,7 @@ export default {
         }
         &-filter {
             width: 35%;
-            height: 600px;
+            height: 650px;
             background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,238,218,1) 100%);
             position: absolute;
             left: 0;
@@ -196,6 +203,11 @@ export default {
         .hardskills, .softskills {
             width: 45%;
             margin: 0 50px ;
+
+            &:last-child {
+                margin-bottom: 20px;
+            }
+
             h4 {
                 font-size: 1.1em;
                 color: black;
@@ -222,7 +234,7 @@ export default {
                     border-radius: 10px;
                 }
             }
-            .html {
+            .critical-spirit, .conscientious, .html {
                 .full {
                     width: 90%;
                     background: #FF0000;
@@ -231,7 +243,7 @@ export default {
                     
                 }
             }
-            .critical-spirit {
+            .team-spirit, .js {
                 .full {
                     width: 85%;
                     background: #FF3A00;
@@ -239,7 +251,7 @@ export default {
                     transform-origin: left;
                 }
             }
-            .js, .github {
+            .learn-ability, .autonomy, .nodejs, .reactjs {
                 .full {
                     width: 80%;
                     background: #D68910;
@@ -247,7 +259,7 @@ export default {
                     transform-origin: left;
                 }
             }
-            .vuejs, .reactjs {
+            .perseverance, .vuejs, .sql {
                 .full {
                     width: 75%;
                     background: #D4AC0D;
@@ -255,7 +267,7 @@ export default {
                     transform-origin: left;
                 }
             }
-            .nodejs, .sql {
+            .github, .typescript {
                 .full {
                     width: 70%;
                     background: #F1C40F;

@@ -45,6 +45,16 @@ export default {
                     skills: ["Création d'animations CSS", "Optimisation du code grâce à Sass", "Versioning du projet"],
                     technologies: ["html.png", "css.png", "sass.png", "git.png"],
                     link: "https://valtnm.github.io/ValentinMonteiro_3_09072021/"
+                },
+                {
+                    name: "CinéAmbul 72",
+                    short: "Refonte du site de CinéAmbul 72",
+                    image: "cineambul72.png",
+                    alt: "Aperçu du projet CinéAmbul 72",
+                    description: "CinéAmbul 72 est une association de cinéma. Les objectifs de ce projet étaient de réaliser une application web simple d'utilisation et qui ai un accès administrateur afin de faciliter sa mise à jour. C'était un projet important puisque j'ai dû la rendre dynamique en créant une API et en la rattachant à une base de données SQL.",
+                    skills: ["Création d'une SPA avec React.js", "Création d'une API avec Node.js", "Mise en place d'une base de données SQL", "Création d'un accès administrateur avec JWT"],
+                    technologies: ["html.png", "css.png", "sass.png", "git.png", "react.png", "node.png", "mysql.png"],
+                    link: "https://cineambul72.fr/"
                 }
             ]
         }

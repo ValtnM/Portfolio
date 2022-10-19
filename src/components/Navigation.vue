@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'Menu',
+  name: 'Navigation',
    methods: {
   
   }
